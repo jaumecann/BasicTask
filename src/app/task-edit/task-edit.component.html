@@ -1,0 +1,16 @@
+<section id="edit">
+    <form [formGroup]="taskForm" (ngSubmit)="save()">
+      <label for="title">Title</label>
+      <div>
+        <input type="text" formControlName="title" [class.error]="!taskForm.get('title')?.valid && taskForm.get('title')?.touched">
+      </div>
+
+
+      <label for="description">Description</label>
+      <div>
+        <textarea formControlName="description" [class.error]="!taskForm.get('description')?.valid && taskForm.get('description')?.touched"></textarea>
+      </div>
+
+      <button type="submit" [disabled]="!taskForm.valid">Submit</button>
+    </form>
+</section>

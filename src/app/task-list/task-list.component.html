@@ -1,0 +1,20 @@
+<section class="list-header">
+  <button routerLink="new">Add Task</button>
+  <input type="text" #filter>
+  <div>Filter</div>
+  <select #completedSelect (change)="onChangeFilterOption(completedSelect.value)">
+    <option value="ALL">Todas</option>
+    <option value="COMP">Completadas</option>
+    <option value="INCOMP">No completadas</option>
+  </select>
+</section>
+
+<section>
+  <ng-container *ngFor="let task of tasks">
+    <div>
+      {{task.title}}
+      <input type="checkbox" [checked]="task.completed" (change)="onCompletionChange($event, task.id)">
+      <button (click)="deleteEntry(task.id)">Delete {{task.id}}</button>
+    </div>
+  </ng-container>
+</section>

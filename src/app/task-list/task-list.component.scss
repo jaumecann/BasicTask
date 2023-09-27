@@ -1,0 +1,11 @@
+.list-header{
+  margin-top: 1em;
+  display: flex;
+  justify-content: left;
+  input{
+    margin: 0 2em;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+}
